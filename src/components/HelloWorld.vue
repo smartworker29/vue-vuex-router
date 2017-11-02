@@ -3,7 +3,11 @@
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
+<<<<<<< HEAD
       <li v-for="user in users" v-bind:key="user" v-if="user.isShow" >{{ user.title }}</li>
+=======
+      <li v-for="user in users" v-bind:key="user" >{{ user }}</li>
+>>>>>>> 25fe5ee6e3541a12a70e6522446a513dc1ace60e
     </ul>
   </div>
 </template>
@@ -18,6 +22,7 @@ export default {
     return {
       msg: 'Message from Carol at ' + new Date().toLocaleString(),
       users: [
+<<<<<<< HEAD
         {
           isShow: true, 
           title: 'A'
@@ -30,6 +35,9 @@ export default {
           isShow: false, 
           title: 'C'
         },
+=======
+        'A', 'B', 'C', 'D', 'E','F','G','I','J'
+>>>>>>> 25fe5ee6e3541a12a70e6522446a513dc1ace60e
       ]
     }
   }
