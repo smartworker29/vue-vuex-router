@@ -23,9 +23,12 @@
 <script>
 export default {
   name: 'HelloWorld',
+  // data: {
+  //   msg: 'Hello world'
+  // }
   data () {
     return {
-      msg: 'Vue app Dev'
+      msg: 'Message from Carol at ' + new Date().toLocaleString()
     }
   }
 }
@@ -33,9 +36,10 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+h1 {
+  color: aliceblue;
 }
+
 ul {
   list-style-type: none;
   padding: 0;
@@ -46,5 +50,9 @@ li {
 }
 a {
   color: #42b983;
+}
+
+.hello {
+  color: white;
 }
 </style>
