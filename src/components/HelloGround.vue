@@ -9,6 +9,11 @@ export default {
     return {
       msg: 'This is my dream'
     }
+  },
+  mounted () {
+    console.log('clg', this.msg)
+    this.$data.msg = 'not dream, it\'s real';
   }
 }
+
 </script>
