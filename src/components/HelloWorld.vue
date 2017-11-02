@@ -3,12 +3,12 @@
     <h1>{{ msg }}</h1>
     <h2>Essential Links</h2>
     <ul>
-<<<<<<< HEAD
-      <li v-for="user in users" v-bind:key="user" v-if="user.isShow" >{{ user.title }}</li>
-=======
-      <li v-for="user in users" v-bind:key="user" >{{ user }}</li>
->>>>>>> 25fe5ee6e3541a12a70e6522446a513dc1ace60e
+      <li @click="displayTitle()" v-for="user in users" v-bind:key="user" v-if="user.isShow" >{{ user.title }}</li>
     </ul>
+    <input type="text" v-model="newitem" />
+    <div key="newitem">
+      {{newitem}}
+    </div>
   </div>
 </template>
 
@@ -20,25 +20,27 @@ export default {
   // }
   data () {
     return {
+      newitem: '',
       msg: 'Message from Carol at ' + new Date().toLocaleString(),
       users: [
-<<<<<<< HEAD
         {
-          isShow: true, 
+          isShow: true,
           title: 'A'
         },
         {
-          isShow: true, 
+          isShow: true,
           title: 'B'
         },
         {
-          isShow: false, 
+          isShow: false,
           title: 'C'
-        },
-=======
-        'A', 'B', 'C', 'D', 'E','F','G','I','J'
->>>>>>> 25fe5ee6e3541a12a70e6522446a513dc1ace60e
+        }
       ]
+    }
+  },
+  methods: {
+    displayTitle () {
+      console.log('show message')
     }
   }
 }
