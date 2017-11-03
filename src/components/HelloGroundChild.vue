@@ -15,7 +15,7 @@ export default {
   },
   methods: {
     sendEvent () {
-      this.$emit('incrementChild');
+      this.$emit('incrementChild', 123);
     }
   }
 }

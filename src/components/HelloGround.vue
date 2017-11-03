@@ -1,6 +1,9 @@
 <template>
   <div>
-    <hellochild @incrementChild="increment" ></hellochild>
+    <hellochild @incrementChild="val =>book = val " ></hellochild>
+    <div>
+      {{ book }}
+    </div>
   </div>
 </template>
 
@@ -37,8 +40,8 @@ export default {
     showMesage () {
       window.alert('show alert');
     },
-    increment () {
-      window.alert('increment');
+    increment (val) {
+      window.alert('increment: ', val);
     }
   }
 }
