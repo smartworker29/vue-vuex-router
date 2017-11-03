@@ -1,12 +1,20 @@
 <template>
-  <h1 @click.self="showMesage()" style="width: 200px;height:300px; background: yellow; display: block;" ><div> {{ msg }} </div></h1>
+  <div>
+    <hellochild @incrementChild="increment" ></hellochild>
+  </div>
 </template>
 
 <script>
+import hellochild from './HelloGroundChild'
+
 export default {
   name: 'HelloGround',
+  components: {
+    hellochild: hellochild
+  },
   data () {
     return {
+      book: '',
       msg: 'This is my dream'
     }
   },
@@ -28,6 +36,9 @@ export default {
   methods: {
     showMesage () {
       window.alert('show alert');
+    },
+    increment () {
+      window.alert('increment');
     }
   }
 }
