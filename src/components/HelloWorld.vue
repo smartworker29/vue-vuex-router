@@ -1,15 +1,18 @@
 <template>
   <div class="hello">
-    <component v-bind:is="currentView" >
-
-    </component>
+    <h1>{{ msg }}</h1>
+    <h2>Essential Links</h2>
+    <ul>
+      <li @click="displayTitle()" v-for="user in users" v-bind:key="user" v-if="user.isShow" >{{ user.title }}</li>
+    </ul>
+    <input type="text" v-model="newitem" key="newitem" />
+    <div>
+      {{newitem}}
+    </div>
   </div>
 </template>
 
 <script>
-import helloground from './HelloGround';
-import hellogroundchild from './HelloGroundChild';
-
 export default {
   name: 'HelloWorld',
   // data: {
@@ -19,14 +22,21 @@ export default {
     return {
       newitem: '',
       msg: 'Message from Carol at ' + new Date().toLocaleString(),
-      currentView: 'hellogroundchild',
-      helloground: helloground,
-      hellogroundchild: hellogroundchild
+      users: [
+        {
+          isShow: true,
+          title: 'A'
+        },
+        {
+          isShow: true,
+          title: 'B'
+        },
+        {
+          isShow: false,
+          title: 'C'
+        }
+      ]
     }
-  },
-  components: {
-      helloground: helloground,
-      hellogroundchild: hellogroundchild
   },
   methods: {
     displayTitle () {
